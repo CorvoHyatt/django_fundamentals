@@ -13,6 +13,7 @@ class Task(models.Model):
     title = models.CharField(max_length=100)
     descritption = models.TextField()
     project = models.ForeignKey(Proyect, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} - {self.project.name}"
