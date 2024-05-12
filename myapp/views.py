@@ -21,8 +21,7 @@ def projects(request):
     return JsonResponse(projects, safe=False)
 
 
-def tasks(request, id: int):
+def tasks(request, title: str):
     query = Task.objects
-    # task = query.get(id=id)
-    task = get_object_or_404(Task, id=id)
+    task = query.get(title=title)
     return HttpResponse(f"task: {task.title}")
