@@ -24,9 +24,12 @@ def about(request):
 
 
 def projects(request):
-    projects = list(Proyect.objects.values())
-    return render(request, "projects.html")
+    # projects = list(Proyect.objects.values())
+    query = Proyect.objects
+    projects = query.all()
+    return render(request, "projects.html", {"projects": projects})
 
 
 def tasks(request):
-    return render(request, "tasks.html")
+    tasks = Task.objects.all()
+    return render(request, "tasks.html", {"tasks": tasks})
