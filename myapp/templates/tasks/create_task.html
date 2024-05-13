@@ -1,7 +1,6 @@
 {% extends "layouts/base.html" %}
 {% block content %}
 <h1>Create a new Task</h1>
-{% if flag %} <h1>No es palindromo</h1> {% else %} <H1>Es palindromo</H1> {% endif %}
 <form method = "POST">
 	{% csrf_token %}
 	{{form.as_p}}
