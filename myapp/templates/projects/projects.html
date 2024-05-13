@@ -2,6 +2,10 @@
 {% block content %}
 <h1>Projects</h1>
 {% for project in projects %}
-  <h1>{{ project.name }}</h1>
+<article class = "card">
+  <a href="">
+    <h1>{{ project.name }}</h1>
+  </a>
+</article>
 {% endfor %}
 {% endblock content %}
